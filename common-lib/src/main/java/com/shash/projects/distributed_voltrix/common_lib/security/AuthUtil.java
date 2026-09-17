@@ -43,7 +43,7 @@ public class AuthUtil {
 
                 Long userId = Long.parseLong(claims.get("userId", String.class));
                 String username = claims.getSubject();
-                return new JwtUserPrinciple(userId, username, new ArrayList<>());
+                return new JwtUserPrinciple(userId, username, null, new ArrayList<>());
         }
 
         public Long getCurrentUserId(){
