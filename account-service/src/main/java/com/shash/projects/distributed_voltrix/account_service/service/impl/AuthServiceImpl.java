@@ -24,11 +24,12 @@ import org.springframework.stereotype.Service;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class AuthServiceImpl implements AuthService {
 
-    UserRepository userRepository;
-    UserMapper userMapper;
-    PasswordEncoder passwordEncoder;
-    AuthUtil authUtil;
+    final UserRepository userRepository;
+    final UserMapper userMapper;
+    final PasswordEncoder passwordEncoder;
+    final AuthUtil authUtil;
     AuthenticationManager authenticationManager;
+
 
     @Override
     public AuthResponse signup(SignupRequest request) {
