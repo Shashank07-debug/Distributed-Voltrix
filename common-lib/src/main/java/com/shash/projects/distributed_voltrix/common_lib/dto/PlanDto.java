@@ -1,6 +1,6 @@
-package com.shash.projects.distributed_voltrix.account_service.dto.subscription;
+package com.shash.projects.distributed_voltrix.common_lib.dto;
 
-public record PlanResponse(
+public record PlanDto(
         Long id,
         String name,
         Integer maxProjects,

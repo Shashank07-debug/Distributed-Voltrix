@@ -1,6 +1,7 @@
 package com.shash.projects.distributed_voltrix.account_service.service;
 
 import com.shash.projects.distributed_voltrix.account_service.dto.subscription.SubscriptionResponse;
+import com.shash.projects.distributed_voltrix.common_lib.dto.PlanDto;
 import com.shash.projects.distributed_voltrix.common_lib.enums.SubscriptionStatus;
 
 import java.time.Instant;
@@ -18,4 +19,5 @@ public interface SubscriptionService {
 
     void markSubscriptionPastDue(String gatewaySubscriptionId);
 
+    PlanDto getCurrentSubscribedPlanByUser();
 }

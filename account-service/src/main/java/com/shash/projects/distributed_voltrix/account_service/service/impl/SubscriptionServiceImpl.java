@@ -9,6 +9,7 @@ import com.shash.projects.distributed_voltrix.account_service.repository.PlanRep
 import com.shash.projects.distributed_voltrix.account_service.repository.SubscriptionRepository;
 import com.shash.projects.distributed_voltrix.account_service.repository.UserRepository;
 import com.shash.projects.distributed_voltrix.account_service.service.SubscriptionService;
+import com.shash.projects.distributed_voltrix.common_lib.dto.PlanDto;
 import com.shash.projects.distributed_voltrix.common_lib.enums.SubscriptionStatus;
 import com.shash.projects.distributed_voltrix.common_lib.error.ResourceNotFoundException;
 import com.shash.projects.distributed_voltrix.common_lib.security.AuthUtil;
@@ -142,6 +143,12 @@ public class SubscriptionServiceImpl implements SubscriptionService {
         subscriptionRepository.save(subscription);
 
         //Notify user via email
+    }
+
+    @Override
+    public PlanDto getCurrentSubscribedPlanByUser() {
+        SubscriptionResponse subscriptionResponse = getCurrentSubscription();
+        return subscriptionResponse.plan();
     }
 
 
