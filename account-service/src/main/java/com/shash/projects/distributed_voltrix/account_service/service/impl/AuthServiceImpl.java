@@ -1,18 +1,18 @@
-package com.shash.projects.lovable_clone.service.impl;
+package com.shash.projects.distributed_voltrix.account_service.service.impl;
 
-import com.shash.projects.lovable_clone.dto.auth.AuthResponse;
-import com.shash.projects.lovable_clone.dto.auth.LoginRequest;
-import com.shash.projects.lovable_clone.dto.auth.SignupRequest;
-import com.shash.projects.lovable_clone.entity.User;
-import com.shash.projects.lovable_clone.error.BadRequestException;
-import com.shash.projects.lovable_clone.mapper.UserMapper;
-import com.shash.projects.lovable_clone.repository.UserRepository;
-import com.shash.projects.lovable_clone.security.AuthUtil;
-import com.shash.projects.lovable_clone.service.AuthService;
+
+import com.shash.projects.distributed_voltrix.account_service.dto.auth.AuthResponse;
+import com.shash.projects.distributed_voltrix.account_service.dto.auth.LoginRequest;
+import com.shash.projects.distributed_voltrix.account_service.dto.auth.SignupRequest;
+import com.shash.projects.distributed_voltrix.account_service.entity.User;
+import com.shash.projects.distributed_voltrix.account_service.mapper.UserMapper;
+import com.shash.projects.distributed_voltrix.account_service.repository.UserRepository;
+import com.shash.projects.distributed_voltrix.account_service.service.AuthService;
+import com.shash.projects.distributed_voltrix.common_lib.error.BadRequestException;
+import com.shash.projects.distributed_voltrix.common_lib.security.AuthUtil;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -40,7 +40,7 @@ public class AuthServiceImpl implements AuthService {
         user.setPassword(passwordEncoder.encode(request.password()));
         user = userRepository.save(user);
 
-        String token = authUtil.generateAccessToken(user);
+        String token = authUtil.generateAccessToken(userMapper.toUserDto(user));
 
         return new AuthResponse(token, userMapper.toUserProfileResponse(user));
     }
@@ -52,7 +52,7 @@ public class AuthServiceImpl implements AuthService {
         );
 
         User user = (User)authentication.getPrincipal();
-        String token = authUtil.generateAccessToken(user);
+        String token = authUtil.generateAccessToken(userMapper.toUserDto(user));
 
         return new AuthResponse(token, userMapper.toUserProfileResponse(user));
     }

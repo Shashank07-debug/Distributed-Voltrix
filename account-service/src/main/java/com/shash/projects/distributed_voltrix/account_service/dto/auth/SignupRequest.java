@@ -1,4 +1,4 @@
-package com.shash.projects.lovable_clone.dto.auth;
+package com.shash.projects.distributed_voltrix.account_service.dto.auth;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

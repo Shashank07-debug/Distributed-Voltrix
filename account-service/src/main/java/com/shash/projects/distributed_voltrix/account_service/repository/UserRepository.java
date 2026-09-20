@@ -1,6 +1,7 @@
-package com.shash.projects.lovable_clone.repository;
+package com.shash.projects.distributed_voltrix.account_service.repository;
 
-import com.shash.projects.lovable_clone.entity.User;
+
+import com.shash.projects.distributed_voltrix.account_service.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

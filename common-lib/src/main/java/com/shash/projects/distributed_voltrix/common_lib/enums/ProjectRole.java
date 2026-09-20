@@ -1,11 +1,12 @@
-package com.shash.projects.lovable_clone.enums;
+package com.shash.projects.distributed_voltrix.common_lib.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Set;
 
-import static com.shash.projects.lovable_clone.enums.ProjectPermission.*;
+import static com.shash.projects.distributed_voltrix.common_lib.enums.ProjectPermission.*;
+
 
 @RequiredArgsConstructor
 @Getter

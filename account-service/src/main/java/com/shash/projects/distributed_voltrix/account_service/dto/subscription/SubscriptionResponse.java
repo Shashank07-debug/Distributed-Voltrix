@@ -1,4 +1,4 @@
-package com.shash.projects.lovable_clone.dto.subscription;
+package com.shash.projects.distributed_voltrix.account_service.dto.subscription;
 
 import java.time.Instant;
 

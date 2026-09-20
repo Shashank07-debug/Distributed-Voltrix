@@ -1,11 +1,11 @@
-package com.shash.projects.lovable_clone.controller;
+package com.shash.projects.distributed_voltrix.account_service.controller;
 
-import com.shash.projects.lovable_clone.dto.auth.AuthResponse;
-import com.shash.projects.lovable_clone.dto.auth.LoginRequest;
-import com.shash.projects.lovable_clone.dto.auth.SignupRequest;
-import com.shash.projects.lovable_clone.dto.auth.UserProfileResponse;
-import com.shash.projects.lovable_clone.service.AuthService;
-import com.shash.projects.lovable_clone.service.UserService;
+
+import com.shash.projects.distributed_voltrix.account_service.dto.auth.AuthResponse;
+import com.shash.projects.distributed_voltrix.account_service.dto.auth.LoginRequest;
+import com.shash.projects.distributed_voltrix.account_service.dto.auth.SignupRequest;
+import com.shash.projects.distributed_voltrix.account_service.dto.auth.UserProfileResponse;
+import com.shash.projects.distributed_voltrix.account_service.service.AuthService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class AuthController {
     AuthService authService;
-    UserService userService;
+//    UserService userService;
 
 
     @PostMapping("/signup")
@@ -31,9 +31,9 @@ public class AuthController {
         return ResponseEntity.ok(authService.login(request));
     }
 
-    @GetMapping("/me")
-    public ResponseEntity<UserProfileResponse> getProfile(){
-        Long userId = 1L;
-        return ResponseEntity.ok(userService.getProfile(userId));
-    }
+//    @GetMapping("/me")
+//    public ResponseEntity<UserProfileResponse> getProfile(){
+//        Long userId = 1L;
+//        return ResponseEntity.ok(userService.getProfile(userId));
+//    }
 }

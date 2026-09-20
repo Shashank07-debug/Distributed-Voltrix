@@ -1,6 +1,7 @@
-package com.shash.projects.lovable_clone.entity;
+package com.shash.projects.distributed_voltrix.account_service.entity;
 
-import com.shash.projects.lovable_clone.enums.SubscriptionStatus;
+
+import com.shash.projects.distributed_voltrix.common_lib.enums.SubscriptionStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

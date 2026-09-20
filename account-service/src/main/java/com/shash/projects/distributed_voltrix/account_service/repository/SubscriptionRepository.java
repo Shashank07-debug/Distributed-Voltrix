@@ -1,7 +1,8 @@
-package com.shash.projects.lovable_clone.repository;
+package com.shash.projects.distributed_voltrix.account_service.repository;
 
-import com.shash.projects.lovable_clone.entity.Subscription;
-import com.shash.projects.lovable_clone.enums.SubscriptionStatus;
+
+import com.shash.projects.distributed_voltrix.account_service.entity.Subscription;
+import com.shash.projects.distributed_voltrix.common_lib.enums.SubscriptionStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

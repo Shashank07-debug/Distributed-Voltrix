@@ -1,4 +1,4 @@
-package com.shash.projects.lovable_clone.config;
+package com.shash.projects.distributed_voltrix.account_service.config;
 
 import com.stripe.Stripe;
 import jakarta.annotation.PostConstruct;

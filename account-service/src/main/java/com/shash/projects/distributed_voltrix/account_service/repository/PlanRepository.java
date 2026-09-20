@@ -1,4 +1,4 @@
-package com.shash.projects.lovable_clone.repository;
+package com.shash.projects.distributed_voltrix.account_service.repository;
 
 import com.shash.projects.lovable_clone.entity.Plan;
 import org.springframework.data.jpa.repository.JpaRepository;

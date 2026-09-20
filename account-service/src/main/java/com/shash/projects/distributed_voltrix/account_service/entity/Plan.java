@@ -1,7 +1,9 @@
-package com.shash.projects.lovable_clone.entity;
+package com.shash.projects.distributed_voltrix.account_service.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)

@@ -1,4 +1,4 @@
-package com.shash.projects.lovable_clone.entity;
+package com.shash.projects.distributed_voltrix.account_service.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -20,7 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Table(name = "users")
-public class User implements UserDetails {
+public class User {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -36,10 +36,4 @@ public class User implements UserDetails {
     @UpdateTimestamp
     Instant updatedAt;
     Instant deletedAt;
-
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
 }
