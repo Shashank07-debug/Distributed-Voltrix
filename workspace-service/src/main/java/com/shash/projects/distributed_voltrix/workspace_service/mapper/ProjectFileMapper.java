@@ -1,7 +1,7 @@
 package com.shash.projects.distributed_voltrix.workspace_service.mapper;
 
 
-import com.shash.projects.distributed_voltrix.workspace_service.dto.project.FileNode;
+import com.shash.projects.distributed_voltrix.common_lib.dto.FileNode;
 import com.shash.projects.distributed_voltrix.workspace_service.entity.ProjectFile;
 import org.mapstruct.Mapper;
 
