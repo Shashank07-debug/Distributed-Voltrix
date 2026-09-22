@@ -22,12 +22,14 @@ public class AuthUtil {
         private String jwtSecretKey;
 
         private SecretKey getSecretKey(){
+
                 return Keys.hmacShaKeyFor(jwtSecretKey.getBytes(StandardCharsets.UTF_8));
         }
-        public String generateAccessToken(UserDto user){
+        public String generateAccessToken(JwtUserPrinciple user) {
                 return Jwts.builder()
                         .subject(user.username())
-                        .claim("userId", user.id().toString())
+                        .claim("userId", user.userId().toString())
+                        .claim("name", user.name())
                         .issuedAt(new Date())
                         .expiration(new Date(System.currentTimeMillis() + 1000*60*100))
                         .signWith(getSecretKey())
@@ -42,8 +44,9 @@ public class AuthUtil {
                         .getPayload();
 
                 Long userId = Long.parseLong(claims.get("userId", String.class));
+                String name = claims.get("name", String.class);
                 String username = claims.getSubject();
-                return new JwtUserPrinciple(userId, username, null, new ArrayList<>());
+                return new JwtUserPrinciple(userId, name, username, null, new ArrayList<>());
         }
 
         public Long getCurrentUserId(){
