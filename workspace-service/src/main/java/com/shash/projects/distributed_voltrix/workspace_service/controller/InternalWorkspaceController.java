@@ -1,6 +1,7 @@
 package com.shash.projects.distributed_voltrix.workspace_service.controller;
 
 import com.shash.projects.distributed_voltrix.common_lib.dto.FileTreeDto;
+import com.shash.projects.distributed_voltrix.common_lib.enums.ProjectPermission;
 import com.shash.projects.distributed_voltrix.workspace_service.service.ProjectFileService;
 import com.shash.projects.distributed_voltrix.workspace_service.service.ProjectService;
 import lombok.RequiredArgsConstructor;
@@ -15,15 +16,20 @@ public class InternalWorkspaceController {
     private final ProjectFileService projectFileService;
 
     @GetMapping("/projects/{projectId}/files/tree")
-    public FileTreeDto getFileTree(@PathVariable Long prjectId){
-        return projectFileService.getFileTree(prjectId);
+    public FileTreeDto getFileTree(@PathVariable Long projectId) {
+        return projectFileService.getFileTree(projectId);
     }
 
     @GetMapping("/projects/{projectId}/files/content")
-    public String getFileTree(@PathVariable Long projectId, @RequestParam String path){
+    public String getFileContent(@PathVariable Long projectId, @RequestParam String path) {
         return projectFileService.getFileContent(projectId, path);
     }
 
-
+    @GetMapping("/projects/{projectId}/permissions/check")
+    public boolean checkProjectPermission(
+            @PathVariable Long projectId,
+            @RequestParam ProjectPermission permission) {
+        return projectService.hasPermission(projectId, permission);
+    }
 
 }

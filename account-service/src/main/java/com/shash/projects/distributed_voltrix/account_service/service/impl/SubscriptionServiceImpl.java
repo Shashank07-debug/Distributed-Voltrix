@@ -31,7 +31,7 @@ public class SubscriptionServiceImpl implements SubscriptionService {
     private final SubscriptionMapper subscriptionMapper;
     private final UserRepository userRepository;
     private final PlanRepository planRepository;
-    private final Integer FREE_TRIER_PROJECTS_ALLOWED = 3;
+    private final Integer FREE_TIER_PROJECTS_ALLOWED = 3;
 
 
     @Override
@@ -44,6 +44,17 @@ public class SubscriptionServiceImpl implements SubscriptionService {
         )).orElse(
                 new Subscription()
         );
+//        if (currentSubscription == null) {
+//            PlanDto freePlan = new PlanDto(
+//                    null,                          // id
+//                    "FREE",                        // name
+//                    FREE_TIER_PROJECTS_ALLOWED,     // maxProjects
+//                    0,                              // maxTokensPerDay
+//                    false,                          // unlimitedAi
+//                    "0"                             // price
+//            );
+//            return new SubscriptionResponse(freePlan, "FREE", null, 0L);
+//        }
 
         return subscriptionMapper.toSubscriptionResponse(currentSubscription);
     }

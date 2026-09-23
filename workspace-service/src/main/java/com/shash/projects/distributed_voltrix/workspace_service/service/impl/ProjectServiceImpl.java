@@ -1,6 +1,7 @@
 package com.shash.projects.distributed_voltrix.workspace_service.service.impl;
 
 import com.shash.projects.distributed_voltrix.common_lib.dto.PlanDto;
+import com.shash.projects.distributed_voltrix.common_lib.enums.ProjectPermission;
 import com.shash.projects.distributed_voltrix.common_lib.enums.ProjectRole;
 import com.shash.projects.distributed_voltrix.common_lib.error.BadRequestException;
 import com.shash.projects.distributed_voltrix.common_lib.error.ResourceNotFoundException;
@@ -15,6 +16,7 @@ import com.shash.projects.distributed_voltrix.workspace_service.entity.ProjectMe
 import com.shash.projects.distributed_voltrix.workspace_service.mapper.ProjectMapper;
 import com.shash.projects.distributed_voltrix.workspace_service.repository.ProjectMemberRepository;
 import com.shash.projects.distributed_voltrix.workspace_service.repository.ProjectRepository;
+import com.shash.projects.distributed_voltrix.workspace_service.security.SecurityExpressions;
 import com.shash.projects.distributed_voltrix.workspace_service.service.ProjectService;
 import com.shash.projects.distributed_voltrix.workspace_service.service.ProjectTemplateService;
 import jakarta.transaction.Transactional;
@@ -39,15 +41,14 @@ public class ProjectServiceImpl implements ProjectService {
     AuthUtil authUtil;
     ProjectTemplateService projectTemplateService;
     AccountClient accountClient;
-
+    SecurityExpressions securityExpressions;
 
     @Override
     public ProjectResponse createProject(ProjectRequest request) {
 
-        if(!canCreateNewProject()){
-            throw new BadRequestException("User cannot create a new project with current plan, Upgrade plan now.");
+        if(!canCreateProject()) {
+            throw new BadRequestException("User cannot create a New project with current Plan, Upgrade plan now.");
         }
-
 
         Long ownerUserId = authUtil.getCurrentUserId();
 
@@ -56,6 +57,7 @@ public class ProjectServiceImpl implements ProjectService {
                 .isPublic(false)
                 .build();
         project = projectRepository.save(project);
+
         ProjectMemberId projectMemberId = new ProjectMemberId(project.getId(), ownerUserId);
         ProjectMember projectMember = ProjectMember.builder()
                 .id(projectMemberId)
@@ -65,10 +67,12 @@ public class ProjectServiceImpl implements ProjectService {
                 .project(project)
                 .build();
         projectMemberRepository.save(projectMember);
-        projectTemplateService.initializeProjectFormTemplate(project.getId());
+
+        projectTemplateService.initializeProjectFromTemplate(project.getId());
 
         return projectMapper.toProjectResponse(project);
     }
+
     @Override
     public List<ProjectSummaryResponse> getUserProjects() {
         Long userId = authUtil.getCurrentUserId();
@@ -82,14 +86,15 @@ public class ProjectServiceImpl implements ProjectService {
     @PreAuthorize("@security.canViewProject(#projectId)")
     public ProjectSummaryResponse getUserProjectById(Long projectId) {
         Long userId = authUtil.getCurrentUserId();
-        ProjectRepository.ProjectWithRole projectWithRole = projectRepository.findAccessibleProjectByIdWithRole(projectId, userId)
-                .orElseThrow(() ->  new BadRequestException("Project Not Found"));
+
+        var projectWithRole = projectRepository.findAccessibleProjectByIdWithRole(projectId, userId)
+                .orElseThrow(() -> new BadRequestException("Project Not Found"));
 
         return projectMapper.toProjectSummaryResponse(projectWithRole.getProject(), projectWithRole.getRole());
     }
 
     @Override
-    @PreAuthorize("@security.canEditProjec(#projectId)")
+    @PreAuthorize("@security.canEditProject(#projectId)")
     public ProjectResponse updateProject(Long projectId, ProjectRequest request) {
         Long userId = authUtil.getCurrentUserId();
         Project project = getAccessibleProjectById(projectId, userId);
@@ -101,24 +106,30 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    @PreAuthorize("@@security.canDeleteProjec(#projectId)")
+    @PreAuthorize("@security.canDeleteProject(#projectId)")
     public void softDelete(Long projectId) {
         Long userId = authUtil.getCurrentUserId();
         Project project = getAccessibleProjectById(projectId, userId);
 
         project.setDeletedAt(Instant.now());
         projectRepository.save(project);
-
     }
 
-    public Project getAccessibleProjectById(Long projectId, Long userId){
+    @Override
+    public boolean hasPermission(Long projectId, ProjectPermission permission) {
+        return securityExpressions.hasPermission(projectId, permission);
+    }
+
+    ///  INTERNAL FUNCTIONS
+
+    public Project getAccessibleProjectById(Long projectId, Long userId) {
         return projectRepository.findAccessibleProjectById(projectId, userId)
                 .orElseThrow(() -> new ResourceNotFoundException("Project", projectId.toString()));
     }
 
-    private boolean canCreateNewProject() {
+    private boolean canCreateProject() {
         Long userId = authUtil.getCurrentUserId();
-        if(userId == null){
+        if (userId == null) {
             return false;
         }
         PlanDto plan = accountClient.getCurrentSubscribedPlanByUser();
@@ -128,6 +139,4 @@ public class ProjectServiceImpl implements ProjectService {
 
         return ownedCount < maxAllowed;
     }
-
-
 }

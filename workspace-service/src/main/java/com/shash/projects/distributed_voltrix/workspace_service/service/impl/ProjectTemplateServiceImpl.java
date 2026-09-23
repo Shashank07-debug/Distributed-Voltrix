@@ -29,11 +29,12 @@ public class ProjectTemplateServiceImpl implements ProjectTemplateService {
     private static final String TARGET_BUCKET = "projects";
     private static final String TEMPLATE_NAME = "react-vite-tailwind-daisyui-starter-main";
 
+
     @Override
-    public void initializeProjectFormTemplate(Long projectId) {
+    public void initializeProjectFromTemplate(Long projectId) {
         Project project = projectRepository.findById(projectId).orElseThrow(
-                () -> new ResourceNotFoundException("Project", projectId.toString())
-        );
+                () -> new ResourceNotFoundException("Project", projectId.toString()));
+
         try {
             Iterable<Result<Item>> results = minioClient.listObjects(
                     ListObjectsArgs.builder()
@@ -82,6 +83,26 @@ public class ProjectTemplateServiceImpl implements ProjectTemplateService {
             throw new RuntimeException("Failed to initialize project from template", e);
         }
 
-
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

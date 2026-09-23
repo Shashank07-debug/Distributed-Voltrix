@@ -1,6 +1,5 @@
 package com.shash.projects.distributed_voltrix.account_service.entity;
 
-
 import com.shash.projects.distributed_voltrix.common_lib.enums.SubscriptionStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,12 +9,12 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
 
-@FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class Subscription {
 
@@ -27,7 +26,6 @@ public class Subscription {
     @JoinColumn(nullable = false, name = "user_id")
     User user;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false, name = "plan_id")
     Plan plan;
@@ -35,7 +33,7 @@ public class Subscription {
     @Enumerated(value = EnumType.STRING)
     SubscriptionStatus status;
 
-    String gatewaySubscriptionId;
+    String gatewaySubscriptionId; //can be renamed to gatewaySubscriptionId
 
     Instant currentPeriodStart;
     Instant currentPeriodEnd;

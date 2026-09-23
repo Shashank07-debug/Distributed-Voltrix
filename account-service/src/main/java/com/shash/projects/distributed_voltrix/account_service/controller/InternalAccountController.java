@@ -18,7 +18,7 @@ public class InternalAccountController {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
-    private SubscriptionService subscriptionService;
+    private final SubscriptionService subscriptionService;
 
     @GetMapping("/users/{id}")
     public UserDto getUserById(@PathVariable Long id){
