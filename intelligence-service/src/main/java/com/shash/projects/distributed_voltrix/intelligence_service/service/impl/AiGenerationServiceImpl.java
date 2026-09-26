@@ -1,9 +1,11 @@
 package com.shash.projects.distributed_voltrix.intelligence_service.service.impl;
 
+import com.shash.projects.distributed_voltrix.common_lib.enums.ChatEventStatus;
 import com.shash.projects.distributed_voltrix.common_lib.enums.ChatEventType;
 import com.shash.projects.distributed_voltrix.common_lib.enums.ChatEventType;
 import com.shash.projects.distributed_voltrix.common_lib.enums.MessageRole;
 import com.shash.projects.distributed_voltrix.common_lib.error.ResourceNotFoundException;
+import com.shash.projects.distributed_voltrix.common_lib.event.FileStoreRequestEvent;
 import com.shash.projects.distributed_voltrix.intelligence_service.client.WorkspaceClient;
 import com.shash.projects.distributed_voltrix.intelligence_service.llm.CodeGenerationTools;
 //import com.shash.projects.distributed_voltrix.common_lib.event.FileStoreRequestEvent;
@@ -27,6 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.metadata.Usage;
 //import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -52,7 +55,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
     private final ChatEventRepository chatEventRepository;
     private final UsageService usageService;
     private final WorkspaceClient workspaceClient;
-//    private final KafkaTemplate<String, Object> kafkaTemplate;
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
 
     @Override
@@ -145,7 +148,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
         List<ChatEvent> chatEventList = llmResponseParser.parseChatEvents(fullText, assistantChatMessage);
         chatEventList.addFirst(ChatEvent.builder()
                 .type(ChatEventType.THOUGHT)
-//                .status(ChatEventStatus.CONFIRMED)
+                .status(ChatEventStatus.CONFIRMED)
                 .chatMessage(assistantChatMessage)
                 .content("Thought for "+duration+"s")
                 .sequenceOrder(0)
@@ -155,16 +158,16 @@ public class AiGenerationServiceImpl implements AiGenerationService {
                 .filter(e -> e.getType() == ChatEventType.FILE_EDIT)
                 .forEach(e -> {
                     String sagaId = UUID.randomUUID().toString();
-//                    e.setSagaId(sagaId);
-//                    FileStoreRequestEvent fileStoreRequestEvent = new FileStoreRequestEvent(
-//                            projectId,
-//                            sagaId,
-//                            e.getFilePath(),
-//                            e.getContent(),
-//                            userId
-//                    );
+                    e.setSagaId(sagaId);
+                    FileStoreRequestEvent fileStoreRequestEvent = new FileStoreRequestEvent(
+                            projectId,
+                            sagaId,
+                            e.getFilePath(),
+                            e.getContent(),
+                            userId
+                    );
                     log.info("Storage request event sent: {}", e.getFilePath());
-//                    kafkaTemplate.send("file-storage-request-event", "project-"+projectId, fileStoreRequestEvent);
+                    kafkaTemplate.send("file-storage-request-event", "project-"+projectId, fileStoreRequestEvent);
                 });
 
         chatEventRepository.saveAll(chatEventList);
