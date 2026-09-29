@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: lovable-main-ingress
-  namespace: lovable-core
+  name: voltrix-main-ingress
+  namespace: voltrix-core
   annotations:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
@@ -17,7 +17,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: lovable-frontend
+            name: voltrix-frontend
             port:
               number: 80
               
@@ -28,7 +28,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: lovable-frontend
+            name: voltrix-frontend
             port:
               number: 80
 
@@ -40,7 +40,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: lovable-me-proxy
+            name: voltrix-me-proxy
             port:
               number: 80
   
