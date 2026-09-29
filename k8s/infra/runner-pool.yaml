@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: runner-pool
-  namespace: lovable-previews
+  namespace: voltrix-previews
 spec:
   replicas: 2
   selector:
@@ -54,7 +54,7 @@ spec:
                   key: MINIO_ROOT_PASSWORD
             # Constructing the host URL for the internal MinIO service
             - name: MC_HOST_myminio
-              value: "http://$(MINIO_USER):$(MINIO_PASS)@minio.lovable-core.svc.cluster.local:9000"
+              value: "http://$(MINIO_USER):$(MINIO_PASS)@minio.voltrix-core.svc.cluster.local:9000"
           volumeMounts:
             - name: workspace
               mountPath: /app
