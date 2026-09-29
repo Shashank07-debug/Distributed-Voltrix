@@ -4,7 +4,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: strict-preview-sandbox
-  namespace: lovable-previews
+  namespace: voltrix-previews
 spec:
   podSelector: {} # Applies to all user runner pods
   policyTypes:
@@ -13,14 +13,14 @@ spec:
   
   # --- INCOMING TRAFFIC (Ingress) ---
   ingress:
-    # 1. ONLY accept traffic from the lovable-me-proxy
+    # 1. ONLY accept traffic from the voltrix-me-proxy
     - from:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: lovable-core
+              kubernetes.io/metadata.name: voltrix-core
           podSelector:
             matchLabels:
-              app: lovable-me-proxy
+              app: voltrix-me-proxy
       ports:
         - protocol: TCP
           port: 5173 # Vite dev server port
@@ -38,11 +38,11 @@ spec:
         - protocol: TCP
           port: 53
 
-    # 2. ALLOW Syncer to talk to MinIO in lovable-core
+    # 2. ALLOW Syncer to talk to MinIO in voltrix-core
     - to:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: lovable-core
+              kubernetes.io/metadata.name: voltrix-core
       ports:
         - protocol: TCP
           port: 9000
