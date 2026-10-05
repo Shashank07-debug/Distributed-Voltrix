@@ -10,7 +10,7 @@ spec:
   ingressClassName: "nginx"
   rules:
   # 1. Main Website Route (The Frontend!)
-  - host: "codingshuttle.in"
+  - host: "usevoltrix.xyz"
     http:
       paths:
       - path: /
@@ -21,7 +21,7 @@ spec:
             port:
               number: 80
               
-  - host: "www.codingshuttle.in"
+  - host: "www.usevoltrix.xyz"
     http:
       paths:
       - path: /
@@ -33,7 +33,7 @@ spec:
               number: 80
 
   # 2. Previews Route
-  - host: "*.previews.codingshuttle.in"
+  - host: "*.previews.usevoltrix.xyz"
     http:
       paths:
       - path: /
@@ -45,7 +45,7 @@ spec:
               number: 80
   
   # 3. API Gateway Route
-  - host: "api.codingshuttle.in"
+  - host: "api.usevoltrix.xyz"
     http:
       paths:
       - path: /
