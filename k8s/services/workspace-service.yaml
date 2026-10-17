@@ -1,3 +1,4 @@
+# k8s/services/workspace-service.yaml
 
 # 1. Create a dedicated ServiceAccount in voltrix-core
 apiVersion: v1
@@ -28,14 +29,13 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: workspace-service-account
-    namespace: voltrix-core # Note the cross-namespace reference here
+    namespace: voltrix-core
 roleRef:
   kind: Role
   name: preview-manager-role
   apiGroup: rbac.authorization.k8s.io
 
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -92,6 +92,14 @@ spec:
                 secretKeyRef:
                   name: app-secrets
                   key: JWT_SECRET
+            - name: FRONTEND_URL
+              value: https://usevoltrix.xyz
+            - name: PREVIEW_DOMAIN
+              value: usevoltrix.xyz
+            - name: PREVIEW_NAMESPACE
+              value: voltrix-previews
+            - name: PROXY_PORT
+              value: "8090"
           resources:
             requests:
               cpu: 100m

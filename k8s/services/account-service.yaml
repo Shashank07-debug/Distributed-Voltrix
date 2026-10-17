@@ -20,14 +20,14 @@ spec:
           image: shashank0677/voltrix-account-service:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 9050      
+            - containerPort: 9050
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: k8s
             - name: CONFIG_SERVER_URL
               value: http://config-service.voltrix-core.svc.cluster.local:8888
             - name: SPRING_CLOUD_CONFIG_FAIL_FAST
-              value: "false"          
+              value: "false"
             - name: SPRING_CLOUD_CONFIG_RETRY_MAX_ATTEMPTS
               value: "10"
             - name: SPRING_CLOUD_CONFIG_RETRY_INITIAL_INTERVAL
@@ -42,16 +42,24 @@ spec:
                 secretKeyRef:
                   name: app-secrets
                   key: JWT_SECRET
-            - name: STRIPE_API_KEY          
+            - name: STRIPE_API_KEY
               valueFrom:
                 secretKeyRef:
                   name: app-secrets
                   key: STRIPE_API_KEY
-            - name: STRIPE_WEBHOOK_SECRET   
+            - name: STRIPE_WEBHOOK_SECRET
               valueFrom:
                 secretKeyRef:
                   name: app-secrets
                   key: STRIPE_WEBHOOK_SECRET
+            - name: FRONTEND_URL
+              value: https://usevoltrix.xyz
+            - name: PREVIEW_DOMAIN
+              value: usevoltrix.xyz
+            - name: PREVIEW_NAMESPACE
+              value: voltrix-apps
+            - name: PROXY_PORT
+              value: "8090"
           resources:
             requests:
               cpu: 100m
@@ -63,15 +71,15 @@ spec:
             httpGet:
               path: /account/actuator/health
               port: 9050
-            initialDelaySeconds: 120   
+            initialDelaySeconds: 120
             periodSeconds: 15
-            timeoutSeconds: 5         
+            timeoutSeconds: 5
             failureThreshold: 3
           startupProbe:
             httpGet:
               path: /account/actuator/health
               port: 9050
-            failureThreshold: 30 # 30 * 10s = 300s max startup time
+            failureThreshold: 30
             periodSeconds: 10
             timeoutSeconds: 5
 ---

@@ -20,7 +20,7 @@ spec:
           image: shashank0677/voltrix-api-gateway:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 8082
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: k8s
@@ -47,7 +47,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /actuator/health
-              port: 8080
+              port: 8082
             initialDelaySeconds: 90
             periodSeconds: 15
             timeoutSeconds: 5
@@ -64,4 +64,4 @@ spec:
     app: api-gateway
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 8082

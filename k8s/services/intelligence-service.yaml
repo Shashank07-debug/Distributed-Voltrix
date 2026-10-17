@@ -47,6 +47,14 @@ spec:
                 secretKeyRef:
                   name: app-secrets
                   key: JWT_SECRET
+            - name: FRONTEND_URL
+              value: https://usevoltrix.xyz
+            - name: PREVIEW_DOMAIN
+              value: usevoltrix.xyz
+            - name: PREVIEW_NAMESPACE
+              value: voltrix-apps
+            - name: PROXY_PORT
+              value: "8090"
           resources:
             requests:
               cpu: 100m
