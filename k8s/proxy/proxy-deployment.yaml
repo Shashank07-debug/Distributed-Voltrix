@@ -3,21 +3,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: voltrix-me-proxy
+  name: voltrix-proxy
   namespace: voltrix-core
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: voltrix-me-proxy
+      app: voltrix-proxy
   template:
     metadata:
       labels:
-        app: voltrix-me-proxy
+        app: voltrix-proxy
     spec:
       containers:
-        - name: voltrix-me-proxy
-          image: anuj55149/voltrix-proxy:latest
+        - name: voltrix-proxy
+          image: shashank0677/voltrix-proxy:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -40,11 +40,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: voltrix-me-proxy
+  name: voltrix-proxy
   namespace: voltrix-core
 spec:
   selector:
-    app: voltrix-me-proxy
+    app: voltrix-proxy
   ports:
     - port: 80
       targetPort: 80

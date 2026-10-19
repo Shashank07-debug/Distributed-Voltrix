@@ -40,7 +40,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: voltrix-me-proxy
+            name: voltrix-proxy
             port:
               number: 80
   

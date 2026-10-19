@@ -20,7 +20,7 @@ spec:
               kubernetes.io/metadata.name: voltrix-core
           podSelector:
             matchLabels:
-              app: voltrix-me-proxy
+              app: voltrix-proxy
       ports:
         - protocol: TCP
           port: 5173 # Vite dev server port

@@ -42,6 +42,16 @@ spec:
                 secretKeyRef:
                   name: app-secrets
                   key: AI_API_KEY
+            - name: AI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: AI_API_KEY
+            - name: OPENROUTER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: AI_API_KEY
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -52,7 +62,7 @@ spec:
             - name: PREVIEW_DOMAIN
               value: usevoltrix.xyz
             - name: PREVIEW_NAMESPACE
-              value: voltrix-apps
+              value: voltrix-previews
             - name: PROXY_PORT
               value: "8090"
           resources:

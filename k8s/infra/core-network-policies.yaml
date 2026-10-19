@@ -53,7 +53,7 @@ spec:
     matchExpressions:
       - key: app
         operator: In
-        values: ["api-gateway", "voltrix-me-proxy", "voltrix-frontend"] # Add any other services that need to be exposed via Ingress
+        values: ["api-gateway", "voltrix-proxy", "voltrix-frontend"] # Add any other services that need to be exposed via Ingress
   policyTypes:
     - Ingress
   ingress:

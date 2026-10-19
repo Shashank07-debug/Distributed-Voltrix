@@ -1,0 +1,1262 @@
+2026-10-19T02:12:14.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-4] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:12:29.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-3] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:12:44.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-5] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:12:59.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-6] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:13:14.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-8] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:13:29.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-9] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:13:44.533Z  INFO 1 --- [intelligence-service] [io-9030-exec-10] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:13:59.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-7] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:14:14.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-2] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:14:29.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-1] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:14:44.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-4] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:14:59.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-3] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:15:14.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-5] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:15:29.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-6] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:15:44.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-8] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:15:59.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-9] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:16:14.533Z  INFO 1 --- [intelligence-service] [io-9030-exec-10] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:16:29.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-7] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:16:44.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-2] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:16:59.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-1] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:17:08.435Z  INFO 1 --- [intelligence-service] [nio-9030-exec-4] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/chat/stream
+2026-10-19T02:17:14.730Z  INFO 1 --- [intelligence-service] [nio-9030-exec-3] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+Hibernate: select cs1_0.project_id,cs1_0.user_id,cs1_0.created_at,cs1_0.deleted_at,cs1_0.updated_at from chat_sessions cs1_0 where (cs1_0.project_id,cs1_0.user_id) in ((?,?))
+Hibernate: select cs1_0.project_id,cs1_0.user_id,cs1_0.created_at,cs1_0.deleted_at,cs1_0.updated_at from chat_sessions cs1_0 where (cs1_0.project_id,cs1_0.user_id) in ((?,?))
+Hibernate: insert into chat_sessions (created_at,deleted_at,updated_at,project_id,user_id) values (?,?,?,?,?)
+2026-10-19T02:17:29.718Z  INFO 1 --- [intelligence-service] [nio-9030-exec-5] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:17:39.229Z ERROR 1 --- [intelligence-service] [enrouter.ai/...] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:17:39.331Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:17:39.421Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:17:39.425Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:17:39.426Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:17:39.428Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:17:39.432Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:17:39.433Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:17:39.435Z ERROR 1 --- [intelligence-service] [oundedElastic-1] c.s.p.d.i.s.i.AiGenerationServiceImpl    : Error during streaming for projectId: 1
+2026-10-19T02:17:39.635Z ERROR 1 --- [intelligence-service] [nio-9030-exec-6] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-10-19T02:17:39.715Z ERROR 1 --- [intelligence-service] [nio-9030-exec-6] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/intelligence] threw exception [Request processing failed: java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header] with root cause
+
+com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-10-19T02:17:44.536Z  INFO 1 --- [intelligence-service] [nio-9030-exec-8] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:17:59.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-9] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:18:08.626Z  INFO 1 --- [intelligence-service] [io-9030-exec-10] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/chat/stream
+Hibernate: select cs1_0.project_id,cs1_0.user_id,cs1_0.created_at,cs1_0.deleted_at,cs1_0.updated_at from chat_sessions cs1_0 where (cs1_0.project_id,cs1_0.user_id) in ((?,?))
+2026-10-19T02:18:09.233Z ERROR 1 --- [intelligence-service] [enrouter.ai/...] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:18:09.321Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:18:09.322Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:18:09.323Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:18:09.323Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:18:09.324Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:18:09.325Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:18:09.325Z ERROR 1 --- [intelligence-service] [oundedElastic-1] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:18:09.326Z ERROR 1 --- [intelligence-service] [oundedElastic-1] c.s.p.d.i.s.i.AiGenerationServiceImpl    : Error during streaming for projectId: 1
+2026-10-19T02:18:09.334Z ERROR 1 --- [intelligence-service] [nio-9030-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-10-19T02:18:09.335Z ERROR 1 --- [intelligence-service] [nio-9030-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/intelligence] threw exception [Request processing failed: java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header] with root cause
+
+com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-10-19T02:18:14.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-2] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:18:29.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-1] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:18:44.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-3] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:18:59.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-4] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:19:14.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-5] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:19:29.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-6] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:19:44.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-8] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:19:59.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-9] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:20:14.535Z  INFO 1 --- [intelligence-service] [io-9030-exec-10] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:20:29.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-7] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:20:32.847Z  INFO 1 --- [intelligence-service] [nio-9030-exec-2] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/chat/stream
+Hibernate: select cs1_0.project_id,cs1_0.user_id,cs1_0.created_at,cs1_0.deleted_at,cs1_0.updated_at from chat_sessions cs1_0 where (cs1_0.project_id,cs1_0.user_id) in ((?,?))
+2026-10-19T02:20:33.125Z ERROR 1 --- [intelligence-service] [enrouter.ai/...] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:20:33.126Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:20:33.128Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:20:33.128Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:20:33.129Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:20:33.133Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:20:33.135Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:20:33.136Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:20:33.137Z ERROR 1 --- [intelligence-service] [oundedElastic-2] c.s.p.d.i.s.i.AiGenerationServiceImpl    : Error during streaming for projectId: 1
+2026-10-19T02:20:33.225Z ERROR 1 --- [intelligence-service] [nio-9030-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-10-19T02:20:33.226Z ERROR 1 --- [intelligence-service] [nio-9030-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/intelligence] threw exception [Request processing failed: java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header] with root cause
+
+com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-10-19T02:20:44.535Z  INFO 1 --- [intelligence-service] [nio-9030-exec-3] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:20:59.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-4] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:21:13.143Z  INFO 1 --- [intelligence-service] [nio-9030-exec-5] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/chat/stream
+Hibernate: select cs1_0.project_id,cs1_0.user_id,cs1_0.created_at,cs1_0.deleted_at,cs1_0.updated_at from chat_sessions cs1_0 where (cs1_0.project_id,cs1_0.user_id) in ((?,?))
+2026-10-19T02:21:13.441Z ERROR 1 --- [intelligence-service] [enrouter.ai/...] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:21:13.442Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:21:13.516Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:21:13.516Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:21:13.517Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:21:13.518Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:21:13.518Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:21:13.519Z ERROR 1 --- [intelligence-service] [oundedElastic-2] o.s.ai.chat.model.MessageAggregator      : Aggregation Error
+
+java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	... 17 common frames omitted
+
+2026-10-19T02:21:13.519Z ERROR 1 --- [intelligence-service] [oundedElastic-2] c.s.p.d.i.s.i.AiGenerationServiceImpl    : Error during streaming for projectId: 1
+2026-10-19T02:21:13.540Z ERROR 1 --- [intelligence-service] [nio-9030-exec-6] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-10-19T02:21:13.545Z ERROR 1 --- [intelligence-service] [nio-9030-exec-6] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/intelligence] threw exception [Request processing failed: java.util.concurrent.CompletionException: com.openai.errors.UnauthorizedException: 401: Missing Authentication header] with root cause
+
+com.openai.errors.UnauthorizedException: 401: Missing Authentication header
+	at com.openai.errors.UnauthorizedException$Builder.build(UnauthorizedException.kt:98) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:59) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.core.handlers.ErrorHandler$errorHandler$1.handle(ErrorHandler.kt:46) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:196) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl$createStreaming$2.invoke(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at com.openai.services.async.chat.ChatCompletionServiceAsyncImpl$WithRawResponseImpl.createStreaming$lambda$3(ChatCompletionServiceAsyncImpl.kt:195) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source) ~[na:na]
+	at com.openai.core.http.RetryingHttpClient.executeAsync$executeWithRetries$lambda$1(RetryingHttpClient.kt:127) ~[openai-java-core-4.49.0.jar:4.49.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompletion.claim(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.complete(Unknown Source) ~[na:na]
+	at org.springframework.ai.openai.http.okhttp.SpringAiOpenAiHttpClient$1.onResponse(SpringAiOpenAiHttpClient.java:137) ~[spring-ai-openai-2.0.1.jar:2.0.1]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519) ~[okhttp-4.12.0.jar:na]
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91) ~[context-propagation-1.2.1.jar:1.2.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-10-19T02:21:14.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-8] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:21:29.534Z  INFO 1 --- [intelligence-service] [nio-9030-exec-9] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:21:44.534Z  INFO 1 --- [intelligence-service] [io-9030-exec-10] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
+2026-10-19T02:21:59.533Z  INFO 1 --- [intelligence-service] [nio-9030-exec-7] c.s.p.d.c.security.JwtAuthFilter         : incoming request: /intelligence/actuator/health
