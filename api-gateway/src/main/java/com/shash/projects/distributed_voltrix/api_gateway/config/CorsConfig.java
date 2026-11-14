@@ -18,7 +18,8 @@ public class CorsConfig {
         corsConfig.setAllowedOrigins(Arrays.asList(
                 "https://usevoltrix.xyz",
                 "https://www.usevoltrix.xyz",
-                "http://localhost:5173"
+                "http://localhost:5173",
+                "http://usevoltrix.xyz"
         ));
         corsConfig.setMaxAge(3600L);
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
