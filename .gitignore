@@ -1,5 +1,2 @@
 **/application.properties
 .env
-config-service/src/main/resources/application.yml
-**/src/main/resources/application.yml
-.env
