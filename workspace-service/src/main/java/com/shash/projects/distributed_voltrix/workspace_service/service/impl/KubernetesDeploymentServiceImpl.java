@@ -45,8 +45,8 @@ public class KubernetesDeploymentServiceImpl implements DeploymentService {
 
         // Use default port 80 format logic for clean URLs, or explicit ports for local testing
         String formattedUrl = proxyPort.equals("80")
-                ? "http://" + domain
-                : "http://" + domain + ":" + proxyPort;
+                ? "https://" + domain
+                : "https://" + domain + ":" + proxyPort;
 
         Pod existingPod = findActivePod(projectId);
 
