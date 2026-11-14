@@ -16,8 +16,8 @@ public class CorsConfig {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.setAllowedOrigins(Arrays.asList(
-                "http://usevoltrix.xyz",
-                "http://www.usevoltrix.xyz",
+                "https://usevoltrix.xyz",
+                "https://www.usevoltrix.xyz",
                 "http://localhost:5173"
         ));
         corsConfig.setMaxAge(3600L);
