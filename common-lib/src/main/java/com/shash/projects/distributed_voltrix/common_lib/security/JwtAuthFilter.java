@@ -11,6 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.servlet.HandlerExceptionResolver;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 
@@ -43,7 +44,11 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             }
             filterChain.doFilter(request, response);
         }catch (Exception e){
-            handlerExceptionResolver.resolveException(request, response, null, e);
+            log.error("JwtAuthFilter failed for {} {}", request.getMethod(), request.getRequestURI(), e);
+            ModelAndView mv = handlerExceptionResolver.resolveException(request, response, null, e);
+            if (mv == null && !response.isCommitted()) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            }
         }
     }
 }
