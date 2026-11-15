@@ -31,32 +31,23 @@ public class SubscriptionServiceImpl implements SubscriptionService {
     private final SubscriptionMapper subscriptionMapper;
     private final UserRepository userRepository;
     private final PlanRepository planRepository;
-    private final Integer FREE_TIER_PROJECTS_ALLOWED = 3;
+    private static final int FREE_MAX_PROJECTS = 5;            // change to 3 if you prefer
+    private static final int FREE_MAX_TOKENS_PER_DAY = 50_000;
 
+    private PlanDto freePlan() {
+        return new PlanDto(null, "FREE", FREE_MAX_PROJECTS, FREE_MAX_TOKENS_PER_DAY, false, "0");
+    }
 
     @Override
     public SubscriptionResponse getCurrentSubscription() {
         Long userId = authUtil.getCurrentUserId();
 
-        var currentSubscription = subscriptionRepository.findByUserIdAndStatusIn(userId, Set.of(
-                SubscriptionStatus.ACTIVE, SubscriptionStatus.PAST_DUE,
-                SubscriptionStatus.TRAILING
-        )).orElse(
-                new Subscription()
-        );
-//        if (currentSubscription == null) {
-//            PlanDto freePlan = new PlanDto(
-//                    null,                          // id
-//                    "FREE",                        // name
-//                    FREE_TIER_PROJECTS_ALLOWED,     // maxProjects
-//                    0,                              // maxTokensPerDay
-//                    false,                          // unlimitedAi
-//                    "0"                             // price
-//            );
-//            return new SubscriptionResponse(freePlan, "FREE", null, 0L);
-//        }
-
-        return subscriptionMapper.toSubscriptionResponse(currentSubscription);
+        return subscriptionRepository.findByUserIdAndStatusIn(userId, Set.of(
+                        SubscriptionStatus.ACTIVE,
+                        SubscriptionStatus.PAST_DUE,
+                        SubscriptionStatus.TRAILING))
+                .map(subscriptionMapper::toSubscriptionResponse)
+                .orElseGet(() -> new SubscriptionResponse(freePlan(), "FREE", null, 0L));
     }
 
     @Override

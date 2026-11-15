@@ -133,10 +133,10 @@ public class ProjectServiceImpl implements ProjectService {
             return false;
         }
         PlanDto plan = accountClient.getCurrentSubscribedPlanByUser();
-
-        int maxAllowed = plan.maxProjects();
+        if (plan == null || plan.maxProjects() == null) {
+            throw new BadRequestException("Could not determine your plan. Please try again.");
+        }
         int ownedCount = projectMemberRepository.countProjectOwnedByUser(userId);
-
-        return ownedCount < maxAllowed;
+        return ownedCount < plan.maxProjects();
     }
 }
