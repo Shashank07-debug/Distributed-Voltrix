@@ -19,43 +19,36 @@ import java.util.regex.Pattern;
 @Slf4j
 public class LlmResponseParser {
 
-    /**
-     * Regex Breakdown:
-     * Group 1: Opening Tag (<tag ...>)
-     * Group 2: Tag Name (message|file|tool)
-     * Group 3: Attributes part (e.g., ' path="foo"' or ' args="a,b"')
-     * Group 4: Content (The stuff inside)
-     * Group 5: Closing Tag (</tag>)
-     */
-
     private static final Pattern GENERIC_TAG_PATTERN = Pattern.compile(
-            "(<(message|file|tool)([^>]*)>)([\\s\\S]*?)(</\\2>)",
+            "(<(message|file|tool)(\\s[^>]*)?>)([\\s\\S]*?)(</\\2\\s*>)",
             Pattern.CASE_INSENSITIVE | Pattern.DOTALL
     );
 
-    // Helper to extract specific attributes (path="..." or args="...") from Group 3
     private static final Pattern ATTRIBUTE_PATTERN = Pattern.compile(
-            "(path|args)=\"([^\"]+)\""
+            "(path|args)\\s*=\\s*[\"']([^\"']+)[\"']"
     );
 
     public List<ChatEvent> parseChatEvents(String fullResponse, ChatMessage parentMessage) {
         List<ChatEvent> events = new ArrayList<>();
         int orderCounter = 1;
 
+        if (fullResponse == null || fullResponse.isBlank()) {
+            return events;
+        }
+
         Matcher matcher = GENERIC_TAG_PATTERN.matcher(fullResponse);
 
         while (matcher.find()) {
             String tagName = matcher.group(2).toLowerCase();
             String attributes = matcher.group(3);
-            String content = matcher.group(4).trim();
+            String content = cleanContent(tagName, matcher.group(4));
 
-            // Extract attributes map
             Map<String, String> attrMap = extractAttributes(attributes);
 
             ChatEvent.ChatEventBuilder builder = ChatEvent.builder()
                     .status(ChatEventStatus.CONFIRMED)
                     .chatMessage(parentMessage)
-                    .content(content) // This is your Markdown content
+                    .content(content)
                     .sequenceOrder(orderCounter++);
 
             switch (tagName) {
@@ -63,12 +56,11 @@ public class LlmResponseParser {
                 case "file" -> {
                     builder.type(ChatEventType.FILE_EDIT);
                     builder.status(ChatEventStatus.PENDING);
-                    builder.filePath(attrMap.get("path")); // Required for files
-//                    builder.content(null);
+                    builder.filePath(attrMap.get("path"));
                 }
                 case "tool" -> {
                     builder.type(ChatEventType.TOOL_LOG);
-                    builder.metadata(attrMap.get("args")); // Store raw file list in metadata
+                    builder.metadata(attrMap.get("args"));
                 }
                 default -> { continue; }
             }
@@ -77,6 +69,15 @@ public class LlmResponseParser {
         }
 
         return events;
+    }
+
+    private String cleanContent(String tagName, String raw) {
+        String text = raw == null ? "" : raw.trim();
+        if (tagName.equals("file")) {
+            text = text.replaceFirst("^```[a-zA-Z]*\\s*\\n", "");
+            text = text.replaceFirst("\\n?```\\s*$", "");
+        }
+        return text.trim();
     }
 
     private Map<String, String> extractAttributes(String attributeString) {
