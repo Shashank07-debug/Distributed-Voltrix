@@ -32,16 +32,13 @@ spec:
               value: "10"
             - name: SPRING_CLOUD_CONFIG_RETRY_INITIAL_INTERVAL
               value: "3000"
+            - name: SPRING_MVC_ASYNC_REQUEST_TIMEOUT
+              value: "300000"
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: app-secrets
                   key: INTELLIGENCE_DB_PASSWORD
-            - name: AI_API_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: app-secrets
-                  key: AI_API_KEY
             - name: AI_API_KEY
               valueFrom:
                 secretKeyRef:
@@ -67,11 +64,11 @@ spec:
               value: "8090"
           resources:
             requests:
-              cpu: 100m
-              memory: 256Mi
-            limits:
               cpu: 250m
               memory: 512Mi
+            limits:
+              cpu: 1000m
+              memory: 1Gi
           readinessProbe:
             httpGet:
               path: /intelligence/actuator/health

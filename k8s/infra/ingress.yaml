@@ -11,7 +11,7 @@ spec:
   ingressClassName: "nginx"
   rules:
     # 1. Previews Route
-    - host: "*.previews.usevoltrix.xyz"
+    - host: "*.usevoltrix.xyz"
       http:
         paths:
           - path: /
